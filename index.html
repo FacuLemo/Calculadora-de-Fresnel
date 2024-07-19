@@ -17,7 +17,7 @@
                     Calculadora de Fresnel
                 </span>
                 <div class="flex items-center space-x-6 rtl:space-x-reverse">
-                    <a href="https://github.com/FacuLemo" class="text-sm  text-gray-500 hover:underline">
+                    <a href="https://github.com/FacuLemo" class="text-sm  text-gray-500 hover:underline" target="_blank" rel="noopener noreferrer">
                         Desarrollado por Facundo Esteban Lemo</a>
                 </div>
             </div>
@@ -28,12 +28,12 @@
         <main class="flex flex-col justify-center w-[100vw] mx-auto ">
             <form>
                 <div class="mt-10 flex flex-wrap md:flex-nowrap justify-between gap-10 text-center md">
-                    <div class="w-full">
+                    <div class="px-10 w-full md:px-0">
                         <input type="number" id="D"
                             class="bg-gray-50 placeholder-slate-500 border shadow-xl text-center border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-1/2 md:mx-auto md:mr-0 p-2.5"
                             placeholder=" Ingrese distancia en Kilómetros">
                     </div>
-                    <div class="w-full">
+                    <div class="px-10 w-full md:px-0">
                         <input type="number" id="F"
                             class="bg-gray-50 placeholder-slate-500 border shadow-xl text-center border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-1/2 p-2.5"
                             placeholder="Ingrese frecuencia en GHz">
@@ -57,9 +57,10 @@
                 <h1 class="text-center text-3xl py-2">
                     ¿cómo funciona?
                 </h1>
-                Ingresando primero la distancia y luego la frecuencia, la aplicación calcula el radio de la primera zona de Fresnel
+                Ingresando primero la distancia y luego la frecuencia, la aplicación calcula el radio de la primera zona
+                de Fresnel
                 utilizando la fórmula que se muestra más arriba. La interpretación de la fórmula es la siguiente:
-                <ul class="my-4 text-left  ms-1 md:ms-36">
+                <ul class="my-4 text-left  ms-1 sm:ms-10 xl:ms-36">
                     <li>
                         • <strong>F₁</strong> es el radio de la primera zona de Fresnel, expresado en metros
                     </li>
@@ -73,7 +74,7 @@
                 <p>Este sitio fue hecho para un trabajo de la materia de Redes a cargo del profesor Ariel Dellafiore,
                     como parte de la tecnicatura de Desarrollo de Software de Itec Río Cuarto. </p>
                 <div class="flex justify-center my-4">
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.es">
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.es" target="_blank" rel="noopener noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88"
                             height="31" viewBox="0 0 88 31" baseProfile="basic" version="1.1">
                             <g id="surface1">
@@ -101,10 +102,11 @@
                             </g>
                         </svg>
                     </a>
-
-                    <p class="ms-4 ">
-                        Facundo Esteban Lemo, 2024.
-                    </p>
+                    <div class="ms-4 ">
+                        <a href="https://github.com/FacuLemo" target="_blank" rel="noopener noreferrer">
+                            Facundo Esteban Lemo, 2024.
+                        </a>
+                    </div>
 
                 </div>
             </div>
@@ -116,9 +118,11 @@
             // Obtener el valor del input
             const distance = document.getElementById('D').value;
             const frequency = document.getElementById('F').value;
-            
-            if(distance>0 && frequency>0){
-                alert(`El radio de la zona de Fresnel en metros es: ${Math.sqrt(distance/frequency) * 8.656}`)
+
+            if (distance > 0 && frequency > 0) {
+                alert(`El radio de la zona de Fresnel en metros es: ${Math.sqrt(distance / frequency) * 8.656}`)
+            } else {
+                alert("Por favor, complete los campos con números válidos.")
             }
         }
 
